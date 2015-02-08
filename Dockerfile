@@ -15,7 +15,8 @@ RUN \
   tar xvzf kibana-3.1.2.tar.gz && \
   rm -f kibana-3.1.2.tar.gz && \
   mv kibana-3.1.2 /usr/share/kibana && \
-  unlink /etc/nginx/conf.d/default.conf
+  unlink /etc/nginx/conf.d/default.conf && \
+  echo "daemon off;" >> /etc/nginx/nginx.conf
 
 #COPY static-html-directory /usr/share/nginx/html
 COPY config/etc/nginx/kibana.conf /etc/nginx/conf.d/kibana.conf
